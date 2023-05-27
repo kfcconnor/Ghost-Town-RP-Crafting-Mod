@@ -1,0 +1,17 @@
+Change log:
+
+Changed engine parts to not need duct tape - Added Mechanic level to equal the lowest level you can use the parts - Also made them make 10 instead of 5
+
+Changed Engine parts and wood burner stove from survivalist to a new Mechanic and General catagory respectively
+
+Added new General Recipe for Needle based on the paperclip conversion posted in our suggestions
+
+Added New General Recipe for Jars from beer and Wine bottles
+
+Allow rotten blood bags to be disinfected
+
+Added Recipes for Dodge challenger tires
+
+27/05/2023
+
+Added Sat phones with working coord grabbing. (Works with PZ map site)

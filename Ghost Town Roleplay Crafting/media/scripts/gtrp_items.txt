@@ -1,0 +1,37 @@
+module BasicCrafting
+{
+    imports 
+    {
+        Base
+		iMeds
+    }
+
+	item SatellitePhone
+	{
+	    DisplayCategory = Communications,
+		Type			= Radio,
+		Icon			= CordlessPhone,,
+		Weight          	= 1.5,
+
+		DisplayName		= Satellite Phone,
+        
+		UseDelta		= 0.014, 
+		UseWhileEquipped	= FALSE,
+		DisappearOnUse		= FALSE,
+		TwoWay			= TRUE,
+		TransmitRange		= 16000,
+		MicRange		= 5,
+		BaseVolumeRange		= 16,
+		IsPortable		= TRUE,
+		IsTelevision		= FALSE,
+		MinChannel		= 200,
+		MaxChannel		= 1000000,
+		UsesBattery		= TRUE,
+		IsHighTier		= TRUE,
+		WorldObjectSprite	= appliances_com_01_48,
+		Tooltip = Tooltip_item_Radio,
+        StaticModel = CordlessPhone,
+        AttachmentType = Walkie,
+	}
+
+}

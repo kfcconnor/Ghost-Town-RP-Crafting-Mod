@@ -1,0 +1,210 @@
+module BasicCrafting
+{
+    imports 
+    {
+        Base
+		iMeds
+    }
+
+    recipe Create Wood Burner Stove
+  {
+     Hinge=2,
+     Screws=20,
+     WeldingRods=2,
+     SheetMetal=10,
+     BlowTorch=4,
+     keep [Recipe.GetItemTypes.Hammer],
+     keep Screwdriver,
+     CanBeDoneFromFloor:true,
+
+	   Result:Mov_AntiqueStove,
+     Sound:Hammering,
+     SkillRequired:MetalWelding=6,
+     Time:750.0,
+     Category:General,
+     OnGiveXP:Recipe.OnGiveXP.MetalWelding10,
+  }
+
+     recipe Create Car Battery Charger
+  {
+     ElectronicsScrap=4,
+     destroy Jumpstarter,
+     keep Screwdriver,
+     CanBeDoneFromFloor:true,
+
+	   Result:CarBatteryCharger,
+     Sound:Hammering,
+     SkillRequired:Electricity=1,
+     Time:300.0,
+     Category:Electrical,
+     OnGiveXP:Recipe.OnGiveXP.Electrical10,
+  }
+
+     recipe Make Thread
+  {
+     SheetRope/RippedSheets/DenimStrips=5,
+     keep Scissors,	   
+
+     CanBeDoneFromFloor:true,
+     Result:Thread=1,
+     Sound:ClothesRipping,
+     Time:100.0,
+     AnimNode:RipSheets,
+     Category:Tailoring,	
+     OnGiveXP:Recipe.OnGiveXP.Tailoring5,
+  }
+
+     recipe Make Twine from Thread
+  {
+     Thread=20,
+
+     CanBeDoneFromFloor:true,
+     Result:Twine=1,
+     Time:200.0,
+     Category:Tailoring,	
+     OnGiveXP:Recipe.OnGiveXP.Tailoring5,
+  }
+
+     recipe Make Thread from Twine
+  {
+     Twine=5,
+     keep Scissors,	   
+
+     CanBeDoneFromFloor:true,
+     Result:Thread=1,
+     Time:300.0,
+     AnimNode:RipSheets,
+     Category:Tailoring,	
+     OnGiveXP:Recipe.OnGiveXP.Tailoring5,
+  }
+
+     recipe Make Rope from Twine
+  {
+     Twine=15,  
+
+     CanBeDoneFromFloor:true,
+     Result:Rope=1,
+     Time:300.0,
+     Category:Tailoring,	
+     OnGiveXP:Recipe.OnGiveXP.Tailoring5,
+  }
+
+     recipe Make Twine from Rope
+  {
+     Rope=1,
+
+     CanBeDoneFromFloor:true,
+     Result:Twine=1,
+     Time:400.0,
+     AnimNode:RipSheets,
+     Category:Tailoring,	
+     OnGiveXP:Recipe.OnGiveXP.Tailoring5,
+  }
+
+  recipe Create Spare Engine Parts
+  {
+     ElectronicsScrap=2,
+     SheetMetal=1,
+     ScrapMetal=4,
+     BlowTorch=2,
+     CanBeDoneFromFloor:true,
+
+	   Result:EngineParts=10,
+     Sound:Hammering,
+     SkillRequired:MetalWelding=2;Mechanics=4;,
+     Time:300.0,
+     Category:Mechanics,
+     OnGiveXP:Recipe.OnGiveXP.MetalWelding10,
+  }
+  
+  recipe Create Jar
+  {
+	WineEmpty2/BeerEmpty/WineEmpty,
+	CanBeDoneFromFloor:true,
+	
+	   Result:EmptyJar=1,
+	 Sound:Hammering
+	 Time:300.0,
+	 Category:General,
+  }
+  
+  recipe Create Needle
+  {
+	Paperclip=1,
+	keep [Recipe.GetItemTypes.Hammer],
+	CanBeDoneFromFloor:true,
+	
+	   Result:Needle=1,	
+	Sound:Hammering,
+	Time:300.0,
+	Category:General,
+  }
+  
+  recipe Disinfect Blood Bag
+    {
+        destroy FullBloodBag/ErythrocyteSuspensionBagABN/ErythrocyteSuspensionBagABP/ErythrocyteSuspensionBagAN/ErythrocyteSuspensionBagAP/ErythrocyteSuspensionBagBN/ErythrocyteSuspensionBagBP/ErythrocyteSuspensionBagON/ErythrocyteSuspensionBagOP,
+        Disinfectant=3,
+
+        Result:EmptyBloodBag,
+        Time:100.0,
+        Category:Health,
+	AllowRottenItem:true,
+	Override:true,
+    }
+
+    recipe Clean Blood Bag
+    {
+        FullBloodBag/ErythrocyteSuspensionBagABN/ErythrocyteSuspensionBagABP/ErythrocyteSuspensionBagAN/ErythrocyteSuspensionBagAP/ErythrocyteSuspensionBagBN/ErythrocyteSuspensionBagBP/ErythrocyteSuspensionBagON/ErythrocyteSuspensionBagOP,
+        Water,
+
+        Result:EmptyBloodBag,
+        Time:150.0,
+        Category:Health,
+        OnTest:Recipe.OnTest.NotTaintedWater,
+	AllowRottenItem:true,
+	Override:true,
+    }
+  
+  	recipe Make DG70 Tire
+	{
+		keep LugWrench,
+		NormalTire2=2,
+		Glue=1,
+		Screws=1,
+
+		Result:DodgeRTtire3,
+		Time:850.0,
+		Category:DG70,
+		SkillRequired:Mechanics=4,
+		Prop1:LugWrench,
+	}
+
+	recipe Make DG70 Tire 1
+	{
+		keep LugWrench,
+		ModernTire2=2,
+		Glue=1,
+		Screws=1,
+
+		Result:DodgeRTtire3,
+		Time:850.0,
+		Category:DG70,
+		SkillRequired:Mechanics=4,
+		Prop1:LugWrench,
+	}
+
+	recipe Make DG70 Tire 2
+	{
+		keep LugWrench,
+		OldTire3=2,
+		Glue=1,
+		Screws=1,
+
+		Result:DodgeRTtire3,
+		Time:850.0,
+		Category:DG70,
+		SkillRequired:Mechanics=4,
+		Prop1:LugWrench,
+	}
+
+}
